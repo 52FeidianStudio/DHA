@@ -3,6 +3,9 @@ package studio.feidian.dha;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author xunjiu
+ */
 @SpringBootApplication
 public class DhaApplication {
 
