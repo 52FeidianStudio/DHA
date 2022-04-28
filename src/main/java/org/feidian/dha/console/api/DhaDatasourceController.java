@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author yinchao
  */
 @RestController
-@RequestMapping("/dhaDatasource")
+@RequestMapping("/datasource")
 @Slf4j(topic = "DhaDatasource")
 public class DhaDatasourceController {
     /**

@@ -10,10 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @EnableNacosConfig
-public class DhaApplication {
+public class DhacApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DhaApplication.class, args);
+        SpringApplication.run(DhacApplication.class, args);
     }
 
 }

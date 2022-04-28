@@ -8,13 +8,14 @@
         <result column="datasource_name" jdbcType="VARCHAR" property="datasourceName"/>
         <result column="ip" jdbcType="VARCHAR" property="ip"/>
         <result column="port" jdbcType="INTEGER" property="port"/>
+        <result column="db_name" jdbcType="VARCHAR" property="dbName"/>
         <result column="username" jdbcType="VARCHAR" property="username"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
         <result column="privilege" jdbcType="VARCHAR" property="privilege"/>
     </resultMap>
     <sql id="Base_Column_List">
         <!--@mbg.generated-->
-        id, datasource_name, ip, port, username, `password`, privilege
+        id, datasource_name, ip, port, db_name, username, `password`, privilege
     </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         <!--@mbg.generated-->
@@ -32,11 +33,11 @@
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into dha_datasource (datasource_name, ip, port,
-        username, `password`, privilege
-        )
+        db_name, username, `password`,
+        privilege)
         values (#{datasourceName,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{port,jdbcType=INTEGER},
-        #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{privilege,jdbcType=VARCHAR}
-        )
+        #{dbName,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+        #{privilege,jdbcType=VARCHAR})
     </insert>
     <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.feidian.dha.console.domain.DhaDatasource"
             useGeneratedKeys="true">
@@ -51,6 +52,9 @@
             </if>
             <if test="port != null">
                 port,
+            </if>
+            <if test="dbName != null">
+                db_name,
             </if>
             <if test="username != null">
                 username,
@@ -71,6 +75,9 @@
             </if>
             <if test="port != null">
                 #{port,jdbcType=INTEGER},
+            </if>
+            <if test="dbName != null">
+                #{dbName,jdbcType=VARCHAR},
             </if>
             <if test="username != null">
                 #{username,jdbcType=VARCHAR},
@@ -96,6 +103,9 @@
             <if test="port != null">
                 port = #{port,jdbcType=INTEGER},
             </if>
+            <if test="dbName != null">
+                db_name = #{dbName,jdbcType=VARCHAR},
+            </if>
             <if test="username != null">
                 username = #{username,jdbcType=VARCHAR},
             </if>
@@ -114,6 +124,7 @@
         set datasource_name = #{datasourceName,jdbcType=VARCHAR},
         ip = #{ip,jdbcType=VARCHAR},
         port = #{port,jdbcType=INTEGER},
+        db_name = #{dbName,jdbcType=VARCHAR},
         username = #{username,jdbcType=VARCHAR},
         `password` = #{password,jdbcType=VARCHAR},
         privilege = #{privilege,jdbcType=VARCHAR}

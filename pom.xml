@@ -11,8 +11,8 @@
     <groupId>org.feidian</groupId>
     <artifactId>dha-console</artifactId>
     <version>1.0.0</version>
-    <name>DHA</name>
-    <description>Database High Availability</description>
+    <name>database-high-availability-console</name>
+    <description>Database High Availability Console</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
