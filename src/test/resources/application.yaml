@@ -22,6 +22,7 @@ dha:
   config:
     enable: true
     app-name: test
+    current-region: master
     master:
       jdbc-url: localhost:3304
       user-name: root
@@ -32,4 +33,3 @@ dha:
       user-name: root
       password: rootofmysql
       region: standby
-    current-region: master
