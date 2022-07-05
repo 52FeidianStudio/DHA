@@ -1,10 +1,10 @@
 package org.feidian.dha.console.canal;
 
-import java.net.InetSocketAddress;
-
 import com.alibaba.otter.canal.client.CanalConnector;
 import com.alibaba.otter.canal.client.CanalConnectors;
 import com.alibaba.otter.canal.common.utils.AddressUtils;
+
+import java.net.InetSocketAddress;
 
 /**
  * 单机模式的测试例子
@@ -18,14 +18,15 @@ public class SimpleCanalClientTest extends AbstractCanalClientTest {
         super(destination);
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // 根据ip，直接创建链接，无HA的功能
         String destination = "example";
         String ip = AddressUtils.getHostIp();
+        System.out.println(ip);
         CanalConnector connector = CanalConnectors.newSingleConnector(new InetSocketAddress(ip, 11111),
-            destination,
-            "canal",
-            "canal");
+                destination,
+                "canal",
+                "canal");
 
         final SimpleCanalClientTest clientTest = new SimpleCanalClientTest(destination);
         clientTest.setConnector(connector);
